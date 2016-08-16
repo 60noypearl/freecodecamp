@@ -1,0 +1,131 @@
+
+
+# --------------
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+diff --git a/diffArrays/index.html b/diffArrays/index.html
+new file mode 100644
+index 0000000..f0f7816
+--- /dev/null
++++ b/diffArrays/index.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html>
++<head>
++	<title>FreeCodeCampMissions</title>
++	<script src="http://localhost:35729/livereload.js"></script>
++		<script type="text/javascript" src="script.js"></script>
++
++<!-- 	 -->
++<script src=rr"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
++
++</head>
++<body>
++
++<div id="mis">ay</div>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/diffArrays/script.js b/diffArrays/script.js
+new file mode 100644
+index 0000000..411fbe5
+--- /dev/null
++++ b/diffArrays/script.js
+@@ -0,0 +1,25 @@
++function convertToRoman(num) {
++
++    var arrRomanNumerals = ["I", "IV", "V", "IX", "X", "L", "XC", "C", "CD", "D", "CM", "M"];
++    var arrRomanDecimals = [1, 4, 5, 9, 10, 50, 90, 100, 400, 500, 900, 1000];
++    var strRoman = "";
++
++    // 1842
++
++    // take care of thousands, hundrends etc
++
++    for (var i = arrRomanDecimals.length - 1; i > 0; i--) {
++        // check if num is bigger than the number i'm going ot decrease
++        if (num > arrRomanDecimals[i]) {
++            for (var j = 0; j < (num / arrRomanDecimals[i]) - 1; j++) {
++                strRoman += arrRomanNumerals[i];
++            }
++
++        }
++    }
++
++    return strRoman ;
++}
++
++
++console.log(convertToRoman(36));
+\ No newline at end of file
+diff --git a/fibonacci/index.html b/fibonacci/index.html
+new file mode 100644
+index 0000000..b83d3dd
+--- /dev/init_files
++++ b/fibonacci/index.html
+@@ -0,0 +1,63 @@
++<!DOCTYPE html>
++<html>
++<head>
++	<title>FreeCodeCampMissions</title>
++	<script src="http://localhost:35729/livereload.js"></script>
++
++<!-- 	 -->
++<style type="text/css">
++	p, #ans{
++		text-align: center;
++		font-size: 50px;
++	}
++
++</style>
++</head>
++<body>
++<p> Keep up! </p>
++<div id="ans"></div>
++<script type="text/javascript">
++
++
++	// document.getElementById("ans").innerHTML = "answer here";
++// function sumFibs(num) {
++// var oddSum = 0;
++// The required function by FCC
++	function sumFibs(num) {
++// Function to make fibonacci and return the sum of odd numbers
++// that meet the requirements
++	function fib(startX, startY, oddSum,num) {
++// 		check if the nuber is odd and meet the requirements to
++// 		add to the sum
++		if (startX % 2 !== 0 && startX <= num) {
++			oddSum += startX;
++		}
++
++		var sum = startX + startY;
++		// temp for storing startY
++		var buff = startY;
++		startY = sum;
++		startX = buff;
++ 				
++
++ 		// make the fibonacci loop and don't exceed memory
++		if (startX + startY < num * num) {
++			return(fib(startX,startY,oddSum,num));
++		}
++		return oddSum;
++		
++		// body...
++	
++	}
++	// the starting numbers are 1 and 1 instead of 0 for convenient purposes
++	return fib(1,1,0,num);
++
++}
++		document.getElementById("ans").innerHTML = sumFibs(4);
++
++
++</script>
++
++
++</body>
++</html>
+\ No newline at end of file

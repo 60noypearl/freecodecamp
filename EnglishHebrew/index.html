@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+		<!-- 	 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://localhost:35729/livereload.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet"><meta charset="">
+		<style type="text/css">
+			#ans{
+				font-size: 3em;
+				margin-top: 5%;
+			font-family: 'Noto Sans', sans-serif;
+			float: center;
+			display:inline-block;
+			line-height: 100%
+			}
+
+			p{
+				margin-top: 3%;
+				font-size: 4em;
+			}
+			body{
+				text-align: center;
+			}
+			input{
+					font-family: 'Roboto', sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Type in any text in english!</p>
+		<div id="ans"></div>
+		<br>
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input"  type="text" name="engToHeb" onkeypress="changeText()" id="input_text">
+			<label class="mdl-textfield__label" for="sample1">Type anything</label>
+		</div>
+		<script type="text/javascript">
+			// document.getElementById("ans").innerHTML = "answer here";
+		// function sumFibs(num) {
+		// var oddSum = 0;
+		// The required function by FCC
+			function changeText(str) {
+				
+				str = str.toLowerCase();
+				var engArr = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l",";","z","x","c","v","b","n","m",",",".","/"];
+				var hebArr =["/","'","ק","ר","א","ט","ו","ן","ם","פ","ש","ד","ג","כ","ע","י","ח","ל","ך","ף","ז","ס","ב","ה","נ","מ","צ","ת","ץ","."];
+				for (var i = 0; i < str.length; i++) {
+						for (var j = 0; j < engArr.length; j++) {
+							if (str[i] === engArr[j]) {
+								str = str.replace(engArr[j], hebArr[j]);
+							}
+						}
+					}
+						return str;
+				}
+		// Function to make fibonacci and return the sum of odd numbers
+		// that meet the requirements
+				var inputBox = document.getElementById("input_text");
+				inputBox.onkeyup = function () {
+					document.getElementById("ans").innerHTML = changeText(inputBox.value);
+				};
+			
+				
+		</script>
+	</body>
+</html>

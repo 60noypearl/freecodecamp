@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> FreeCodeCampMissions </title>
+<script src="http:/ / localhost: 35729 / livereload.js "></script>
+<!-- 	 -->
+<style type="
+text / css ">
+	p, #ans{
+		text-align: center;
+		font-size: 50px;
+	}
+</style>
+</head>
+<body>
+<p> Keep up! </p>
+<div id="
+ans "></div>
+<script type="
+text / javascript ">
+	
+
+function steamrollArray(arr) {
+var newArr = [];
+for (var i = 0; i < arr.length; i++) {
+if (Array.isArray(arr[i])) {
+	for (var j = 0; j < arr[i].length; j++) {
+			if (Array.isArray(arr[i][j])) {
+		for (var k = 0; k < arr[i][j].length; k++) {
+			var problematic = arr[i][j][k];
+						if (Number.isInteger(problematic)) {
+							problematic.toString();
+							problematic = parseInt(problematic.replace(/[\[\]']+/g,''));
+						}
+						if (Array.isArray(problematic)) {
+							problematic = arr[i][j][k][0];
+						}
+						else{
+						problematic = arr[i][j][k].toString();
+						problematic = problematic.replace(/[\[\]']+/g,'');
+						}
+						
+						newArr.push(problematic);
+		}
+}
+else{
+		console.log(arr[i][j]);
+		newArr.push((arr[i][j]))
+
+}
+	
+	}
+	
+}else {
+													newArr.push(arr[i]);
+}
+}
+console.log(newArr);
+
+return newArr;
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+			p, #ans{
+				text-align: center;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+		function pairElement(str) {
+		var ans = [];
+
+		var charsArray = function getPair (char) {
+		
+			switch (char) {
+				case "A":
+				ans.push("A","T");
+					// statements_1
+					break;
+					case "T":
+				ans.push("T","A");
+					break;
+					
+					case "G":
+				ans.push("G","C");
+					break;
+					
+					case "C":
+					ans.push("C","G");
+					// statements_1
+					break;
+					
+				default:
+					// statements_def
+					break;
+			}
+		}
+		
+		for (var i = 0; i < str.length; i++) {
+			ans.push(charsArray(str[i]));
+		}
+		return ans;
+		}
+		
+		
+				document.getElementById("ans").innerHTML = pairElement("GCG");;
+		</script>
+	</body>
+</html>

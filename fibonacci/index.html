@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FreeCodeCampMissions</title>
+	<script src="http://localhost:35729/livereload.js"></script>
+
+<!-- 	 -->
+<style type="text/css">
+	p, #ans{
+		text-align: center;
+		font-size: 50px;
+	}
+
+</style>
+</head>
+<body>
+<p> Keep up! </p>
+<div id="ans"></div>
+<script type="text/javascript">
+
+
+	// document.getElementById("ans").innerHTML = "answer here";
+// function sumFibs(num) {
+// var oddSum = 0;
+// The required function by FCC
+	function sumFibs(num) {
+// Function to make fibonacci and return the sum of odd numbers
+// that meet the requirements
+	function fib(startX, startY, oddSum,num) {
+// 		check if the nuber is odd and meet the requirements to
+// 		add to the sum
+		if (startX % 2 !== 0 && startX <= num) {
+			oddSum += startX;
+		}
+
+		var sum = startX + startY;
+		// temp for storing startY
+		var buff = startY;
+		startY = sum;
+		startX = buff;
+ 				
+
+ 		// make the fibonacci loop and don't exceed memory
+		if (startX + startY < num * num) {
+			return(fib(startX,startY,oddSum,num));
+		}
+		return oddSum;
+		
+		// body...
+	
+	}
+	// the starting numbers are 1 and 1 instead of 0 for convenient purposes
+	return fib(1,1,0,num);
+
+}
+		document.getElementById("ans").innerHTML = sumFibs(4);
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+			p, #ans{
+				text-align: center;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+				
+		
+		function convertToRoman(num) {
+			var strRoman = "";
+		var decimalValue = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+		var romanNumeral = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
+		for (var i = decimalValue.length; i >=0 ; i--) {
+			if (num >= decimalValue[i]) {
+				var divided = Math.floor(num / decimalValue[i]);
+				for (var j = 0; j < divided; j++) {
+					strRoman += romanNumeral[i];
+					num -= decimalValue[i];
+				}
+			}
+			
+
+		}
+
+		// for (var k = 0; k < decimalValue.length; k++) {
+		// 	var regex = /decimalValue[k]/g;
+
+		// var res = strRoman.match(regex);
+		// if (res.length > 3) {
+		// 	var sum = decimalValue[k] * res.length;
+
+		// }
+		// }
+
+
+
+
+
+		return strRoman;
+		}
+		
+				document.getElementById("ans").innerHTML = convertToRoman(99);
+
+		</script>
+	</body>
+</html>

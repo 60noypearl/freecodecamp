@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+			p, #ans{
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up!! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+				
+		function whatIsInAName(collection, source) {
+			var str = "";
+			var arrKeys = [];
+			var arrVals = [];
+			var correctAns = [];
+			var correctMatchesCounter = 0;
+		// What's in a name?
+		// var myArr= [];
+		// collection.forEach( function(element, index) {
+				// 	myArr.push(element);
+		// });
+		Object.getOwnPropertyNames(source).forEach(function(val, idx) {
+			arrKeys.push(val);
+			arrVals.push(source[val]);
+			console.log('arrKeys ' + arrKeys.toString() + 'arrVals ' + arrVals.toString() );	
+		});
+		// var dontBreak = true;
+		collection.forEach( function(element, index) {
+			for(key in element){
+				if (element.hasOwnProperty(key)) {
+					var value = element[key];
+					for (var i = 0; i < arrVals.length; i++) {
+						if (value == arrVals[i]) {
+							arrKeys.push(key);
+						// arrVals.push(value);
+						correctAns.push(element);
+						correctMatchesCounter++;
+						// dontBreak = false;
+						}
+					}
+
+				}
+
+			}
+			// if (!dontBreak) {
+			// 	return false;
+			// 	return true;
+			// }
+		});
+		return correctAns;
+				console.dir('object :' + correctAns.toString());
+
+	}
+		// TODO:
+		// MAke an object which is what I need.
+		// Search for any object with matching key and check if it has the same value
+		// add this object to an array
+		// return the array
+		// TODO: Somethings
+		
+		
+				document.getElementById("ans").innerHTML = whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
+		</script>
+	</body>
+</html>

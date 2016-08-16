@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+			p, #ans{
+				text-align: center;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+			
+			function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+//   			for (var i = 0; i < str.length; i++) {
+//   				if(str[i].toUpperCase() == str[i]){
+//   					str = str.slice(0, str[i]) + '  ' + str.slice(str[i],str.length);
+// }
+//   			}
+			// insert space between cap letters
+  			str = str.replace(/([A-Z])/g, ' $1').trim();
+
+  			// replace specials letters in space
+  			str = str.replace(/[^a-zA-Z ]/g, " ").toLowerCase();
+
+  			
+  			 var wordsArr = str.split(' ');
+  			 var newArr = [];
+  			 for (var i = 0; i < wordsArr.length; i++) {
+  			 	if (wordsArr[i] != ""){
+  			 		newArr.push(wordsArr[i]);
+  			 	}
+  			 }
+  			 var wordsStr = newArr.join('-');
+  return wordsStr;
+}
+
+
+
+
+
+			document.getElementById("ans").innerHTML = spinalCase('Teletubbies say Eh-oh');
+		</script>
+	</body>
+</html>
