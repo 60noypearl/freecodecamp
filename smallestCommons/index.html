@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+			p, #ans{
+				text-align: center;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+				
+		
+		
+function smallestCommons(arr) {
+	var isOk = false;
+	var common = 0;
+  var max = Math.max(arr[0],arr[1]);
+  var min = Math.min(arr[0],arr[1]);
+  var arrAll = [];
+  num = max;
+  for (var i = max; i >= min; i--) {
+      console.log( "numbs " + i);
+      arrAll.push(i);
+  }
+  // alert(arrAll);
+
+	while(!isOk){
+		for (var d = 0; d < arrAll.length; d++) {
+			if (num % arrAll[d] !== 0){
+				num++;
+				break;
+			}
+			if (d === arrAll.length -1) {
+				common = num;
+				isOk = true;
+			}
+		}
+
+			
+	}
+  return common;
+
+}
+
+function isNums(arr,i,num){
+    if (i === arr.length) {
+        return num;
+    }
+    if (num % arr[i] !== 0) {
+        return isNums(arr,0,num+1);
+    }
+    return isNums(arr,i+1,num);
+}
+
+
+		
+				document.getElementById("ans").innerHTML = smallestCommons([18,23]);
+
+		</script>
+	</body>
+</html>
