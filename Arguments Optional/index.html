@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+		body{
+			text-align: center;
+				font-size: 50px;
+		}
+			
+			#ans{
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+				
+		
+		
+
+function addTogether() {
+	console.log(typeof arguments[0]);
+	var a = arguments[0];
+	var b = arguments[1];
+	if (isNumber(a)) {
+		if (isNumber(b)) 
+			return a+b;
+		else{
+			var c = function(n){
+				return n;
+			};
+		return c(b) + a;
+
+	}
+	}
+	else
+		return undefined;
+
+}
+
+function isNumber(num){
+	return (typeof num === "number");
+}
+
+	document.getElementById("ans").innerHTML = addTogether(2)(3);
+
+		</script>
+	</body>
+</html>

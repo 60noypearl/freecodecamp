@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeCodeCampMissions</title>
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- 	 -->
+		<style type="text/css">
+		body{
+			text-align: center;
+				font-size: 50px;
+		}
+			
+			#ans{
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<p> Keep up! </p>
+		<div id="ans"></div>
+		<script type="text/javascript">
+				
+		
+		
+
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+  var isAllTrue = true;
+  var temp = pre;
+  // alert(collection[0][pre])
+  var firstValue = collection[0][pre];
+  for (var i = 0; i < collection.length; i++) {
+  	if (!Boolean(collection[i][pre])){
+  		// alert(collection[i][pre]);
+  		isAllTrue = false;
+  		break;
+  	}
+  }
+  return isAllTrue;
+}
+
+	document.getElementById("ans").innerHTML = truthCheck([{"single": ""}, {"single": "double"}], "single")
+		</script>
+	</body>
+</html>
